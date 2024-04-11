@@ -4,19 +4,23 @@ import { AppContext } from '../context/AppContext';
 const Currency = () =>{
     const {dispatch} = useContext(AppContext);
 
-    const handleChange = () => {
+    const handleChange = (event) => {
+        const newCurrency = event.target.value;
+        dispatch({
+            type: 'CHG_CURRENCY',
+            payload: newCurrency,
+        });     
         
     }
 
 
     return(
         <div>
-            <select className="currency-select" id="currency-select" onChange={handleChange}>
-                <option defaultValue>Choose your currency</option>
-                <option value="dollar" name="dollar"> $ US Dollar</option>
-                <option value="pound" name="pound">£ Pound</option>
-                <option value="euro" name="euro">€ Euro</option>
-                <option value="ruppee" name="ruppee">₹ Ruppee</option>
+            <select className="custom-select" id="currency-select" title="Currency" onChange={handleChange} style={{backgroundColor: "lightgreen"}}>
+                <option value="$" id="usDollar">$ US Dollar</option>
+                <option value="£" id="pound">£ Pound</option>
+                <option value="€" id="euro">€ Euro</option>
+                <option value="₹" id="ruppee">₹ Ruppee</option>
             </select>
         </div>
 

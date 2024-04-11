@@ -19,7 +19,7 @@ const App = () => {
                     <div className='col-sm'>
                         <RemainingBudget />
                     </div>
-                    <div class='form-select' form-select-color: green>
+                    <div className='col-sm'>
                         <Currency />
                     </div>
                     <div className='col-sm'>
